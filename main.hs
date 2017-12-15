@@ -1,4 +1,18 @@
-fac 0 = 1
-fac n = n * fac (n-1)
- 
-main = print (fac 42)
+data Zdanie = Z Char | N Zdanie | C Zdanie Zdanie | A Zdanie Zdanie | K Zdanie Zdanie
+
+drukuj :: Zdanie -> [Char]
+drukuj z = ""
+
+usun_duplikaty :: [Char] -> [Char]
+usun_duplikaty s = ""
+
+wypisz_zmienne :: Zdanie -> [Char]
+wypisz_zmienne z = ""
+
+sprawdz :: Zdanie -> [(Char, Bool)] -> Bool
+sprawdz z m = False
+
+--Funkcja do zad4
+main :: IO ()
+
+main = putStrLn "Hello!"
