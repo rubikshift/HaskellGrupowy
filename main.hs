@@ -35,13 +35,16 @@ dodaj_granice [] = []
 dodaj_granice x = '[' : x ++ ']': []
 
 
-wypisz_zmienne :: [Char] -> [Char]
-wypisz_zmienne[]=[]
-wypisz_zmienne (a:b)
-	| a == '[' = a: wypisz_zmienne b
-	| a == ']' = a: wypisz_zmienne b
-	| b == [']'] = a: wypisz_zmienne b
-	| otherwise = a :[','] ++ wypisz_zmienne b
+formatuj :: [Char] -> [Char]
+formatuj []=[]
+formatuj  (a:b)
+	| a == '[' = a: formatuj b
+	| a == ']' = a: formatuj  b
+	| b == [']'] = a: formatuj b
+	| otherwise = a :[','] ++ formatuj  b
+
+wypisz_zmienne :: Zdanie -> IO()
+wypisz_zmienne z = putStrLn (formatuj(dodaj_granice(usun_duplikaty(zmienne z))))
 
 sprawdz :: Zdanie -> Map Char Bool -> Bool
 sprawdz z m = False
@@ -53,4 +56,5 @@ testowe_zdanie = (C (N (Z 'p')) (A (K (Z 'p') (Z 'q')) (Z 'r')))
 main :: IO ()
 main = do
 putStrLn (drukuj testowe_zdanie)
-putStrLn (wypisz_zmienne(dodaj_granice(usun_duplikaty(zmienne testowe_zdanie))))
+wypisz_zmienne testowe_zdanie
+
