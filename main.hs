@@ -49,7 +49,7 @@ sprawdz z m = False
 --Funkcja do zad4
 
 testowe_zdanie = (C (N (Z 'p')) (A (K (Z 'p') (Z 'q')) (Z 'r')))
-listka = []
+
 main :: IO ()
 main = do
 putStrLn (drukuj testowe_zdanie)
