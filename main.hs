@@ -1,3 +1,5 @@
+import Data.Map (Map)
+
 data Zdanie = Z Char | N Zdanie | C Zdanie Zdanie | A Zdanie Zdanie | K Zdanie Zdanie
 
 drukuj :: Zdanie -> [Char]
@@ -15,7 +17,7 @@ usun_duplikaty s = ""
 wypisz_zmienne :: Zdanie -> [Char]
 wypisz_zmienne z = ""
 
-sprawdz :: Zdanie -> [(Char, Bool)] -> Bool
+sprawdz :: Zdanie -> Map Char Bool -> Bool
 sprawdz z m = False
 
 --Funkcja do zad4
