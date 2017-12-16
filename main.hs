@@ -1,8 +1,4 @@
-import Data.Maybe
-import Data.List
 import Data.Map 
-
-
 
 data Zdanie = Z Char | N Zdanie | C Zdanie Zdanie | A Zdanie Zdanie | K Zdanie Zdanie
 
